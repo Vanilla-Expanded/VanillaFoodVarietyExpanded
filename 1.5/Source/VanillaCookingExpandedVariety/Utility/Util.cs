@@ -30,6 +30,7 @@ namespace VanillaCookingExpandedVariety
             && !x.IsCorpse
             && x!=ThingDefOf.Penoxycyline
             && x.tradeTags?.Contains("Serum")!=true
+            && !x.defName.Contains("VCE_Ruined")
             && x.thingCategories?.Contains(ThingCategoryDefOf.EggsFertilized)!=true
             && (x != ThingDefOf.HemogenPack || (x == ThingDefOf.HemogenPack && p?.genes?.HasActiveGene(GeneDefOf.Hemogenic)==true))
             && (x != ThingDefOf.Meat_Human 
