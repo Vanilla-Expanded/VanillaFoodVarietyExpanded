@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ModMetaData>
+	<name>Vanilla Cooking Expanded - Food Variety</name>
+	<author>Sarg Bjornson</author>
+	<supportedVersions>
+		<li>1.5</li>
+	</supportedVersions>
+	<modIconPath IgnoreIfNoMatchingField="True">UI/VELogo</modIconPath>
+	<packageId>VanillaExpanded.VanillaCookingExpandedVariety</packageId>
+	<description>Vanilla Aspirations Expanded is another mod in our arsenal that aims to add depth to colonists, with a final aim being enhancing the storytelling and making characters more memorable. In a similar manner to The Sims aspirations, Vanilla Aspirations Expanded adds aspirations to colonists that the player may choose to aim towards.
+
+Completing aspirations provides permanent benefits, and completing all aspirations triggers a growth moment for the colonist, providing them with passions and traits that the player chooses.
+
+Colonists may have a number of aspirations, some may be easier to achieve, while other may be harder. Not completing aspirations does not cause any negative effects, so the only effects that the player may obtain from aspirations are positive ones.
+</description>
+	<modDependencies>
+		<li>
+			<packageId>brrainz.harmony</packageId>
+			<displayName>Harmony</displayName>
+			<downloadUrl>https://github.com/pardeike/HarmonyRimWorld/releases/latest</downloadUrl>
+			<steamWorkshopUrl>https://steamcommunity.com/workshop/filedetails/?id=2009463077</steamWorkshopUrl>
+		</li>
+		<li>
+			<packageId>OskarPotocki.VanillaFactionsExpanded.Core</packageId>
+			<displayName>Vanilla Expanded Framework</displayName>
+			<steamWorkshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=1854607105</steamWorkshopUrl>
+		</li>
+	</modDependencies>
+	<loadAfter>
+		<li>Ludeon.RimWorld</li>
+		<li>Ludeon.RimWorld.Royalty</li>
+		<li>Ludeon.RimWorld.Ideology</li>
+		<li>Ludeon.RimWorld.Biotech</li>
+		<li>Ludeon.RimWorld.Anomaly</li>
+		<li>brrainz.harmony</li>
+		<li>OskarPotocki.VanillaFactionsExpanded.Core</li>
+	</loadAfter>
+</ModMetaData>

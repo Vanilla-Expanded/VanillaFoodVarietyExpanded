@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+	<VCE_FavouriteFoodTextOnly>Favourite food or ingredient:</VCE_FavouriteFoodTextOnly>
+	<VCE_FavouriteFood>Favourite food or ingredient: {0}</VCE_FavouriteFood>
+	<VCE_LastFoods>Last eaten foods: {0}</VCE_LastFoods>
+	<VCE_LastFoodsTextOnly>Last eaten foods:</VCE_LastFoodsTextOnly>
+	<VCE_LastIngredients>Last eaten ingredients: {0}</VCE_LastIngredients>
+	<VCE_LastIngredientsTextOnly>Last eaten ingredients:</VCE_LastIngredientsTextOnly>
+	<VCEV_GoBack>Go back</VCEV_GoBack>
+	<VCE_FavouriteFoodEffects>Consuming this food or ingredient will give a +2 bonus to variety</VCE_FavouriteFoodEffects>
+	<VCE_NotEatenYet>Not eaten yet</VCE_NotEatenYet>
+	
+	<VCE_MealVariety>Meal Variety: {0}</VCE_MealVariety>
+	<VCE_IngredientVariety>Ingredient Variety: {0}</VCE_IngredientVariety>
+	<VCE_TotalVariety>Total: {0}</VCE_TotalVariety>
+	
+	<VCE_MealsHasFavourites>Since {0}'s favourite food has been consumed, variety in this category will get a +2 bonus per favourite!</VCE_MealsHasFavourites>
+	<VCE_IngredientsHasFavourites>Since {0}'s favourite ingredient has been consumed, variety in this category will get a +2 bonus per favourite!</VCE_IngredientsHasFavourites>
+	
+	<VCEV_MoodMultiplier>Mood multiplier</VCEV_MoodMultiplier>
+	<VCEV_MoodMultiplierDesc>Both negative and positive moods produced by low and high Food Variety need will be multiplied by this number. +/- 5 by default.</VCEV_MoodMultiplierDesc>
+	<VCEV_Reset>Reset</VCEV_Reset>
+	
+	<VCEV_LowVarietyThreshold>Low Food Variety Threshold</VCEV_LowVarietyThreshold>
+	<VCEV_LowVarietyThresholdDesc>Colonists with lower food variety than this will get negative mood effects. 30% by default.</VCEV_LowVarietyThresholdDesc>
+	
+	<VCEV_HighVarietyThreshold>High Food Variety Threshold</VCEV_HighVarietyThreshold>
+	<VCEV_HighVarietyThresholdDesc>Colonists with higher food variety than this will get positive mood effects. 60% by default.</VCEV_HighVarietyThresholdDesc>
+	
+	<VCEV_NoMoreFavourites>{0} already has two favourite foods. The cookbook won't provide further insights</VCEV_NoMoreFavourites>
+	<VCEV_NewFavouriteGained>{0} has decided that {1} is now their favourite food too!</VCEV_NewFavouriteGained>
+</LanguageData>

@@ -1,0 +1,71 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <!-- ty_todo - all this needs to be reviewed -->
+
+  <!-- Skill-Books -->
+
+  <RulePackDef>
+    <defName>VCEV_CookingBook_Namer</defName>
+    <include>
+      <li>ArtNameUtility</li>
+    </include>
+    <rulePack>
+      <rulesStrings>
+        <!-- General -->
+        <!-- Note: Some cases trigger on books with two subjects, which are both short enough to be a nice title -->
+        <li>title->[titleBasic]</li>
+        <li>title(p=2)->[titleAuthored]</li>
+        <li>title(p=2)->[titleAuthoredNoSubject]</li>
+     
+
+        <!-- Basic -->
+        <li>titleBasic(p=6)->[randAdjective] [subject_primary]</li>
+        <li>titleBasic(p=6)->[randNoun] and [subject_primary]</li>
+        <li>titleBasic->The Flavours of [subject_primary]</li>
+        <li>titleBasic->Savoury [subject_primary]</li>
+        <li>titleBasic->Global Gourmet [subject_primary]</li>
+        <li>titleBasic->Fresh from [subject_primary]</li>
+        <li>titleBasic->Spice Odyssey on [subject_primary]</li>
+        <li>titleBasic->Quick and Easy Weeknight Meals of [subject_primary]</li>
+        <li>titleBasic->Grandma's Kitchen in [subject_primary]</li>
+        <li>titleBasic->The Healthy Plate of [subject_primary]</li>
+        <li>titleBasic->The Ultimate Vegan Cookbook in [subject_primary]</li>
+        <li>titleBasic->Culinary Classics of [subject_primary]</li>   
+        <li>titleBasic->Cooking with Love in [subject_primary]</li>   
+        <li>titleBasic->Fire and Smoke: A Griller's Guide to [subject_primary]</li>
+        <li>titleBasic->Bake It Easy: [subject_primary]</li>
+        <li>titleBasic->Fusion Feast: [subject_primary]</li>
+        <li>titleBasic->Soulful Southern Cooking: [subject_primary]</li>
+        <li>titleBasic->The One-Pot Wonder: [subject_primary]</li>
+        <li>titleBasic->The Lazy Cook's Handbook of [subject_primary]</li>
+        <li>titleBasic->Perfect Pasta Every Time: [subject_primary]</li>
+        <li>titleBasic->Wholesome Meals for the Family: [subject_primary]</li>
+        <li>titleBasic->Tips, Tricks, and Recipes of [subject_primary]</li>
+        <li>titleBasic->Desserts to Die For: [subject_primary]</li>
+        <li>titleBasic->The Chocolate Lover's Cookbook of [subject_primary]</li>
+
+        <!-- Authored, no subject -->
+        <li>titleAuthoredNoSubject->[ANYPAWN_nameIndef]'s Cookbook</li>
+        <li>titleAuthoredNoSubject->[ANYPAWN_nameIndef]'s [randAdjective] Recipes</li>
+        <li>titleAuthoredNoSubject->[ANYPAWN_nameIndef]'s Recipes</li>
+        <li>titleAuthoredNoSubject->[ANYPAWN_nameIndef]'s Culinary Guide</li>
+        <li>titleAuthoredNoSubject->[ANYPAWN_nameIndef]'s Recipe Collection</li>
+        <li>titleAuthoredNoSubject->[ANYPAWN_nameIndef]'s Kitchen Manual</li>
+        <li>titleAuthoredNoSubject->[ANYPAWN_nameIndef]'s Cookery Book</li>
+        <li>titleAuthoredNoSubject->[ANYPAWN_nameIndef]'s Gastronomy Guide</li>
+        <li>titleAuthoredNoSubject->[ANYPAWN_nameIndef]'s Food Guide</li>
+        <li>titleAuthoredNoSubject->[ANYPAWN_nameIndef]'s Chef’s Handbook</li>
+        <li>titleAuthoredNoSubject->[ANYPAWN_nameIndef]'s Cooking Compendium</li>
+        <li>titleAuthoredNoSubject->[ANYPAWN_nameIndef]'s Cook’s Companion</li>
+        <li>titleAuthoredNoSubject->[ANYPAWN_nameIndef]'s Gastronomic Bible</li>
+
+
+
+      </rulesStrings>
+    </rulePack>
+  </RulePackDef>
+
+ 
+  
+</Defs>
