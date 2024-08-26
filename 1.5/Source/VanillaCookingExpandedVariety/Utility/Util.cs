@@ -31,12 +31,12 @@ namespace VanillaCookingExpandedVariety
             && x!=ThingDefOf.Penoxycyline
             && x.tradeTags?.Contains("Serum")!=true
             && x.thingCategories?.Contains(ThingCategoryDefOf.EggsFertilized)!=true
-            && (x != ThingDefOf.HemogenPack || (x == ThingDefOf.HemogenPack && p.genes?.HasActiveGene(GeneDefOf.Hemogenic)==true))
+            && (x != ThingDefOf.HemogenPack || (x == ThingDefOf.HemogenPack && p?.genes?.HasActiveGene(GeneDefOf.Hemogenic)==true))
             && (x != ThingDefOf.Meat_Human 
                 || 
                   (  
                         (x == ThingDefOf.Meat_Human) 
-                        && (p.story?.traits?.HasTrait(InternalDefOf.Cannibal) == true)                      
+                        && (p?.story?.traits?.HasTrait(InternalDefOf.Cannibal) == true)                      
                         && (Current.Game.World?.factionManager?.OfPlayer?.ideos?.PrimaryIdeo?.PreceptsListForReading?.ContainsAny(y => y.def == PreceptDefOf.Cannibalism_Preferred==true || y.def == PreceptDefOf.Cannibalism_RequiredRavenous == true
                         || y.def == PreceptDefOf.Cannibalism_RequiredStrong == true) ==true)
                    )

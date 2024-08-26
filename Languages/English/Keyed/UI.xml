@@ -27,6 +27,7 @@
 	<VCEV_HighVarietyThreshold>High Food Variety Threshold</VCEV_HighVarietyThreshold>
 	<VCEV_HighVarietyThresholdDesc>Colonists with higher food variety than this will get positive mood effects. 60% by default.</VCEV_HighVarietyThresholdDesc>
 	
-	<VCEV_NoMoreFavourites>{0} already has two favourite foods. The cookbook won't provide further insights</VCEV_NoMoreFavourites>
+	<VCEV_NoMoreFavourites>{0} already has two favourite foods. The recipe book won't provide further insights</VCEV_NoMoreFavourites>
 	<VCEV_NewFavouriteGained>{0} has decided that {1} is now their favourite food too!</VCEV_NewFavouriteGained>
+	<VCEV_AlreadyFavourite>{1} is already {0}'s favourite food! The recipe book won't provide further insights</VCEV_AlreadyFavourite>
 </LanguageData>

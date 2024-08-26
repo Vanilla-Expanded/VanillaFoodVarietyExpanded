@@ -7,6 +7,7 @@
     <defName>VCEV_CookingBook</defName>
     <label>recipe book</label>
     <description>A book detailing different recipes and concepts related to new ingredients and culinary techniques.\n\nOnce read, it will provide a new favourite ingredient or meal to the reader, and then it will be destroyed (why is it destroyed? I see you haven't spent much time around a kitchen...)</description>
+	 <thingClass>VanillaCookingExpandedVariety.Book_Ingredient</thingClass>
     <graphicData>
       <texPath>Things/Item/VCEV_CookingBook</texPath>
       <graphicClass>Graphic_Single</graphicClass>

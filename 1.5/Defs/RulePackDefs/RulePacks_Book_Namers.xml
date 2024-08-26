@@ -15,7 +15,6 @@
         <!-- General -->
         <!-- Note: Some cases trigger on books with two subjects, which are both short enough to be a nice title -->
         <li>title->[titleBasic]</li>
-        <li>title(p=2)->[titleAuthored]</li>
         <li>title(p=2)->[titleAuthoredNoSubject]</li>
      
 
@@ -46,19 +45,19 @@
         <li>titleBasic->The Chocolate Lover's Cookbook of [subject_primary]</li>
 
         <!-- Authored, no subject -->
-        <li>titleAuthoredNoSubject->[ANYPAWN_nameIndef]'s Cookbook</li>
-        <li>titleAuthoredNoSubject->[ANYPAWN_nameIndef]'s [randAdjective] Recipes</li>
-        <li>titleAuthoredNoSubject->[ANYPAWN_nameIndef]'s Recipes</li>
-        <li>titleAuthoredNoSubject->[ANYPAWN_nameIndef]'s Culinary Guide</li>
-        <li>titleAuthoredNoSubject->[ANYPAWN_nameIndef]'s Recipe Collection</li>
-        <li>titleAuthoredNoSubject->[ANYPAWN_nameIndef]'s Kitchen Manual</li>
-        <li>titleAuthoredNoSubject->[ANYPAWN_nameIndef]'s Cookery Book</li>
-        <li>titleAuthoredNoSubject->[ANYPAWN_nameIndef]'s Gastronomy Guide</li>
-        <li>titleAuthoredNoSubject->[ANYPAWN_nameIndef]'s Food Guide</li>
-        <li>titleAuthoredNoSubject->[ANYPAWN_nameIndef]'s Chef’s Handbook</li>
-        <li>titleAuthoredNoSubject->[ANYPAWN_nameIndef]'s Cooking Compendium</li>
-        <li>titleAuthoredNoSubject->[ANYPAWN_nameIndef]'s Cook’s Companion</li>
-        <li>titleAuthoredNoSubject->[ANYPAWN_nameIndef]'s Gastronomic Bible</li>
+        <li>titleAuthoredNoSubject->[ANYPAWN_nameIndef]'s Cookbook of [subject_primary]</li>
+        <li>titleAuthoredNoSubject->[ANYPAWN_nameIndef]'s [randAdjective] Recipes of [subject_primary]</li>
+        <li>titleAuthoredNoSubject->[ANYPAWN_nameIndef]'s Recipes of [subject_primary]</li>
+        <li>titleAuthoredNoSubject->[ANYPAWN_nameIndef]'s Culinary Guide of [subject_primary]</li>
+        <li>titleAuthoredNoSubject->[ANYPAWN_nameIndef]'s Recipe Collection of [subject_primary]</li>
+        <li>titleAuthoredNoSubject->[ANYPAWN_nameIndef]'s Kitchen Manual of [subject_primary]</li>
+        <li>titleAuthoredNoSubject->[ANYPAWN_nameIndef]'s Cookery Book of [subject_primary]</li>
+        <li>titleAuthoredNoSubject->[ANYPAWN_nameIndef]'s Gastronomy Guide of [subject_primary]</li>
+        <li>titleAuthoredNoSubject->[ANYPAWN_nameIndef]'s Food Guide of [subject_primary]</li>
+        <li>titleAuthoredNoSubject->[ANYPAWN_nameIndef]'s Chef’s Handbook of [subject_primary]</li>
+        <li>titleAuthoredNoSubject->[ANYPAWN_nameIndef]'s Cooking Compendium of [subject_primary]</li>
+        <li>titleAuthoredNoSubject->[ANYPAWN_nameIndef]'s Cook’s Companion of [subject_primary]</li>
+        <li>titleAuthoredNoSubject->[ANYPAWN_nameIndef]'s Gastronomic Bible of [subject_primary]</li>
 
 
 
