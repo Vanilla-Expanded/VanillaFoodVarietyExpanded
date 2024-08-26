@@ -26,7 +26,7 @@ namespace VanillaCookingExpandedVariety
                 
             x.ingestible != null 
             && (!x.IsDrug || (x.IsDrug && (x.GetCompProperties<CompProperties_Drug>()?.chemical == ChemicalDefOf.Alcohol|| x.GetCompProperties<CompProperties_Drug>()?.chemical == InternalDefOf.VBE_Caffeine)))
-            && x.ingestible?.HumanEdible == true 
+            && (x.ingestible?.HumanEdible == true || x.ingredient?.mergeCompatibilityTags?.Contains("Condiments")==true)
             && !x.IsCorpse
             && x!=ThingDefOf.Penoxycyline
             && x.tradeTags?.Contains("Serum")!=true
