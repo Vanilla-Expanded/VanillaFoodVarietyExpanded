@@ -13,7 +13,7 @@
       <rulesStrings>
         
         <!-- Roots -->
-        <li>desc->This [writingQualityAdjective] [bookType] [follows] a [chef] as [protagHe] [storyStruggles]. [writingQualitySentence]. [maybe_date]</li>
+        <li>desc->This [writingQualityAdjective] [bookType] [follows] a [chef] as [protagHe] [storyStruggles]. [writingQualitySentence]. [maybe_date]\n\nOnce read, this book will provide a new favourite ingredient or meal to the reader, and then it will be destroyed.</li>
        
         <!-- Root: Story struggle variant -->
 

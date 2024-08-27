@@ -17,7 +17,7 @@ namespace VanillaCookingExpandedVariety
 
         public override bool DoesProvidesOutcome(Pawn reader)
         {
-            return true;
+            return false;
         }
 
         public override void OnBookGenerated(Pawn author = null)
