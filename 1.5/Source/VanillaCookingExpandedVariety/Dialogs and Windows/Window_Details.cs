@@ -149,7 +149,7 @@ namespace VanillaCookingExpandedVariety
             }
             if (ingredientsHasFavourites)
             {
-                TooltipHandler.TipRegion(foodVarietyRect, "VCE_IngredientsHasFavourites".Translate(pawn.NameShortColored.ToStringSafe()));
+                TooltipHandler.TipRegion(ingredientVarietyRect, "VCE_IngredientsHasFavourites".Translate(pawn.NameShortColored.ToStringSafe()));
 
             }
             
