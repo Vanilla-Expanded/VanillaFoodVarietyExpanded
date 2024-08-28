@@ -19,7 +19,7 @@ namespace VanillaCookingExpandedVariety
 
         public override string SettingsCategory()
         {
-            return "VCE - Food Variety";
+            return "VE - Food Variety";
         }
 
         public override void DoSettingsWindowContents(Rect inRect)

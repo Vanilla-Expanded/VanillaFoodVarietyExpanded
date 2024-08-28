@@ -1,18 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ModMetaData>
-	<name>Vanilla Cooking Expanded - Food Variety</name>
+	<name>Vanilla Food Variety Expanded</name>
 	<author>Sarg Bjornson</author>
 	<supportedVersions>
 		<li>1.5</li>
 	</supportedVersions>
 	<modIconPath IgnoreIfNoMatchingField="True">UI/VELogo</modIconPath>
-	<packageId>VanillaExpanded.VanillaCookingExpandedVariety</packageId>
-	<description>Vanilla Aspirations Expanded is another mod in our arsenal that aims to add depth to colonists, with a final aim being enhancing the storytelling and making characters more memorable. In a similar manner to The Sims aspirations, Vanilla Aspirations Expanded adds aspirations to colonists that the player may choose to aim towards.
+	<packageId>VanillaExpanded.VanillaFoodVarietyExpanded</packageId>
+	<description>Vanilla Food Variety Expanded introduces a "Food Variety" need, adding a new layer of complexity to meal planning. This need keeps track of the range of meals and ingredients that each colonist consumes. A diverse diet enhances the "Food Variety" score, rewarding colonists with mood boosts for trying new and different foods. Conversely, a lack of variety in their diet leads to mood penalties, reflecting the monotony of eating the same meals repeatedly. All this is configurable!
 
-Completing aspirations provides permanent benefits, and completing all aspirations triggers a growth moment for the colonist, providing them with passions and traits that the player chooses.
+Additionally, the mod introduces "favorite meals / ingredients" for each colonist. When a colonist consumes their favorite meal or an ingredient they love, it provides a special bonus to their Food Variety need, basically counting twice. A new item, recipe books, allows colonists to acquire a second favourite meal / ingredient.
 
-Colonists may have a number of aspirations, some may be easier to achieve, while other may be harder. Not completing aspirations does not cause any negative effects, so the only effects that the player may obtain from aspirations are positive ones.
-</description>
+With this mod you'll find yourself challenged not only to keep your colonists fed but to keep them happy and satisfied with a varied and enjoyable diet, enhancing your colony's storytelling. The best part? There are no downsides to experimenting with new foods—only opportunities for positive outcomes!</description>
 	<modDependencies>
 		<li>
 			<packageId>brrainz.harmony</packageId>
