@@ -23,6 +23,13 @@ namespace VanillaCookingExpandedVariety
         public static float highVarietyThreshold = baseHighVarietyThreshold;
         public const float baseHighVarietyThreshold = 0.6f;
 
+        public static int numberOfMeals = baseNumberOfMeals;
+        public const int baseNumberOfMeals = 7;
+
+        public static int numberOfIngredients = baseNumberOfIngredients;
+        public const int baseNumberOfIngredients = 7;
+
+
         public override void ExposeData()
         {
             base.ExposeData();
@@ -30,8 +37,12 @@ namespace VanillaCookingExpandedVariety
             Scribe_Values.Look(ref moodMultiplier, "moodMultiplier", baseMoodMultiplier);
             Scribe_Values.Look(ref lowVarietyThreshold, "lowVarietyThreshold", baseLowVarietyThreshold);
             Scribe_Values.Look(ref highVarietyThreshold, "highVarietyThreshold", baseHighVarietyThreshold);
+            Scribe_Values.Look(ref numberOfMeals, "numberOfMeals", baseNumberOfMeals);
+            Scribe_Values.Look(ref numberOfIngredients, "numberOfIngredients", baseNumberOfIngredients);
 
         }
+
+      
 
         public static void DoWindowContents(Rect inRect)
         {
@@ -65,8 +76,26 @@ namespace VanillaCookingExpandedVariety
                 highVarietyThreshold = baseHighVarietyThreshold;
             }
 
+            var mealsLabel = ls.LabelPlusButton("VCEV_NumberOfMeals".Translate() + ": " + numberOfMeals, "VCEV_NumberOfMealsDesc".Translate());
+            numberOfMeals = (int)Math.Round(ls.Slider(numberOfMeals, 2, 20), 0);
+
+            if (ls.Settings_Button("VCEV_Reset".Translate(), new Rect(0f, mealsLabel.position.y + 35, 250f, 29f)))
+            {
+                numberOfMeals = baseNumberOfMeals;
+            }
+
+            var ingredientsLabel = ls.LabelPlusButton("VCEV_NumberOfIngredients".Translate() + ": " + numberOfIngredients, "VCEV_NumberOfIngredientsDesc".Translate());
+            numberOfIngredients = (int)Math.Round(ls.Slider(numberOfIngredients, 2, 20), 0);
+
+            if (ls.Settings_Button("VCEV_Reset".Translate(), new Rect(0f, ingredientsLabel.position.y + 35, 250f, 29f)))
+            {
+                numberOfIngredients = baseNumberOfIngredients;
+            }
+
             ls.End();
         }
+
+       
 
 
 

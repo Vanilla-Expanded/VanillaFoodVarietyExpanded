@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+﻿using System;
 using System.Linq;
 using System.Reflection.Emit;
 using System.Security.Cryptography;
@@ -6,7 +6,7 @@ using HarmonyLib;
 using RimWorld;
 using UnityEngine;
 using Verse;
-using Verse.Noise;
+
 
 
 namespace VanillaCookingExpandedVariety
@@ -80,10 +80,11 @@ namespace VanillaCookingExpandedVariety
 
             Rect pawnDietDetails = new Rect(0, outRect.yMin +160, outRect.xMax, 30f);
             Widgets.Label(pawnDietDetails, "VCE_LastFoodsTextOnly".Translate());
-            for(int i=0;i< 10;i++)
+            for(int i=0;i< VanillaCookingExpandedVariety_Settings.numberOfMeals; i++)
        
             {
-                Rect pawnDietDetailsN = new Rect((44f + 10) * i, outRect.yMin + 180, 44, 44);
+                Rect pawnDietDetailsN = new Rect((SizeOfTiles(44, VanillaCookingExpandedVariety_Settings.numberOfMeals,54) + SizeOfTiles(10, VanillaCookingExpandedVariety_Settings.numberOfMeals, 15)) * i, outRect.yMin + 180, 
+                SizeOfTiles(44, VanillaCookingExpandedVariety_Settings.numberOfMeals, 54), SizeOfTiles(44, VanillaCookingExpandedVariety_Settings.numberOfMeals, 54));
                 Widgets.DrawBoxSolidWithOutline(pawnDietDetailsN, fillColor, borderColor, 1);
                 Rect pawnDietDetailsNInside = pawnDietDetailsN.ContractedBy(2);
                 if(i<GameComponent_FoodVariety.pawns_and_diet[pawn].last10Meals.Count())
@@ -99,12 +100,13 @@ namespace VanillaCookingExpandedVariety
 
             }
 
-            Rect pawnDietDetailsIngredients = new Rect(0, outRect.yMin + 230, outRect.xMax, 30f);
+            Rect pawnDietDetailsIngredients = new Rect(0, outRect.yMin + 250, outRect.xMax, 30f);
             Widgets.Label(pawnDietDetailsIngredients, "VCE_LastIngredientsTextOnly".Translate());
-            for (int i = 0; i < 10; i++)
+            for (int i = 0; i < VanillaCookingExpandedVariety_Settings.numberOfIngredients; i++)
 
             {
-                Rect pawnDietDetailsIngredientsN = new Rect((44f + 10)*i, outRect.yMin + 250, 44, 44);
+                Rect pawnDietDetailsIngredientsN = new Rect((SizeOfTiles(44,VanillaCookingExpandedVariety_Settings.numberOfIngredients, 54) + SizeOfTiles(10, VanillaCookingExpandedVariety_Settings.numberOfMeals, 15)) *i, outRect.yMin + 270,
+                SizeOfTiles(44, VanillaCookingExpandedVariety_Settings.numberOfIngredients, 54), SizeOfTiles(44, VanillaCookingExpandedVariety_Settings.numberOfIngredients, 54));
                 Widgets.DrawBoxSolidWithOutline(pawnDietDetailsIngredientsN, fillColor, borderColor, 1);
                 Rect pawnDietDetailsIngredientsNInside = pawnDietDetailsIngredientsN.ContractedBy(2);
                 if (i < GameComponent_FoodVariety.pawns_and_diet[pawn].last10Ingredients.Count())
@@ -119,8 +121,8 @@ namespace VanillaCookingExpandedVariety
                 }
 
             }
-            Rect foodVarietyRect = new Rect(0, outRect.yMin + 300, 100, 30f);
-            Widgets.Label(foodVarietyRect, "VCE_MealVariety".Translate(GameComponent_FoodVariety.MealVariety(pawn)));
+            Rect foodVarietyRect = new Rect(0, outRect.yMin + 340, 160, 30f);
+            Widgets.Label(foodVarietyRect, "VCE_MealVariety".Translate(GameComponent_FoodVariety.MealVariety(pawn), VanillaCookingExpandedVariety_Settings.numberOfMeals));
             bool mealHasFavourites = false;
             foreach (ThingDef thingDef in GameComponent_FoodVariety.pawns_and_favourites[pawn])
             {
@@ -137,8 +139,8 @@ namespace VanillaCookingExpandedVariety
 
 
 
-            Rect ingredientVarietyRect = new Rect(120, outRect.yMin + 300, 150, 30f);
-            Widgets.Label(ingredientVarietyRect, "VCE_IngredientVariety".Translate(GameComponent_FoodVariety.IngredientVariety(pawn)));
+            Rect ingredientVarietyRect = new Rect(170, outRect.yMin + 340, 150, 30f);
+            Widgets.Label(ingredientVarietyRect, "VCE_IngredientVariety".Translate(GameComponent_FoodVariety.IngredientVariety(pawn), VanillaCookingExpandedVariety_Settings.numberOfIngredients));
             bool ingredientsHasFavourites = false;
             foreach (ThingDef thingDef in GameComponent_FoodVariety.pawns_and_favourites[pawn])
             {
@@ -153,8 +155,8 @@ namespace VanillaCookingExpandedVariety
 
             }
             
-            Rect totalVarietyRect = new Rect(290, outRect.yMin + 300, 100, 30f);
-            Widgets.Label(totalVarietyRect, "VCE_TotalVariety".Translate(GameComponent_FoodVariety.Variety(pawn) * 10));
+            Rect totalVarietyRect = new Rect(350, outRect.yMin + 340, 100, 30f);
+            Widgets.Label(totalVarietyRect, "VCE_TotalVariety".Translate(GameComponent_FoodVariety.Variety(pawn) * 100));
 
            
         }
@@ -172,6 +174,13 @@ namespace VanillaCookingExpandedVariety
             }
             color = Color.white;
             return thingDef.uiIcon;
+        }
+
+        public float SizeOfTiles (int numberToScale,int slotNumber,int max)
+        {
+
+
+            return Math.Min(numberToScale * (10f / slotNumber),max);
         }
 
 

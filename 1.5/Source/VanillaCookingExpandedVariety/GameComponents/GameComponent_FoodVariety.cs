@@ -30,60 +30,68 @@ public class GameComponent_FoodVariety : GameComponent
 
     public static void RefreshList(Pawn pawnJustAdded)
     {
+       
         List<Pawn> pawns = PawnsFinder.AllMapsCaravansAndTravelingTransportPods_Alive_Colonists_NoSlaves;
-        if (pawnJustAdded != null)
+        if (pawns.Count > 0)
         {
-            pawns.Add(pawnJustAdded);
-        }
-        GeneDef gene = DefDatabase<GeneDef>.GetNamedSilentFail("VREA_Power");
-        if (gene == null)
-        {
-            colonists_with_foodvariety_need = pawns;
-        }
-        else
-        {
-            foreach (Pawn pawn in pawns)
+            if (pawnJustAdded != null)
             {
-                if (pawn?.genes?.HasActiveGene(gene) == false)
-                {
-                    colonists_with_foodvariety_need.Add(pawn);
-                }
+                pawns.Add(pawnJustAdded);
             }
-
-        }
-        foreach (Pawn pawn in pawns)
-        {
-            if (!pawns_and_diet.ContainsKey(pawn))
+            GeneDef gene = DefDatabase<GeneDef>.GetNamedSilentFail("VREA_Power");
+            if (gene == null)
             {
-                pawns_and_diet.Add(pawn, new PawnDiet());
-                pawns_and_diet[pawn].last10Meals.AddRange(Util.GenerateNDistinctFoods(5, pawn));
-                pawns_and_diet[pawn].last10Ingredients.AddRange(Util.GenerateNDistinctIngredients(5, pawn));
-            } else
-            {
-                if(pawns_and_diet[pawn].last10Meals.ContainsAny(x => x is null))
-                {
-                    pawns_and_diet[pawn].last10Meals.RemoveWhere(x => x is null);
-                }
-                if (pawns_and_diet[pawn].last10Ingredients.ContainsAny(x => x is null))
-                {
-                    pawns_and_diet[pawn].last10Ingredients.RemoveWhere(x => x is null);
-                }
-            }
-
-            if (!pawns_and_favourites.ContainsKey(pawn))
-            {
-                pawns_and_favourites[pawn] = [Util.GenerateFavouriteFood(pawn)];
+                colonists_with_foodvariety_need = pawns;
             }
             else
             {
-                if (pawns_and_favourites[pawn].ContainsAny(x => x is null))
+                foreach (Pawn pawn in pawns)
+                {
+                    if (pawn?.genes?.HasActiveGene(gene) == false)
+                    {
+                        if (!colonists_with_foodvariety_need.Contains(pawn))
+                        {
+                            colonists_with_foodvariety_need.Add(pawn);
+                        }                       
+                    }
+                }
+            }
+            foreach (Pawn pawn in pawns)
+            {
+                if (!pawns_and_diet.ContainsKey(pawn))
+                {
+                    pawns_and_diet.Add(pawn, new PawnDiet());
+                    pawns_and_diet[pawn].last10Meals.AddRange(Util.GenerateNDistinctFoods(VanillaCookingExpandedVariety_Settings.numberOfMeals / 2, pawn));
+                    pawns_and_diet[pawn].last10Ingredients.AddRange(Util.GenerateNDistinctIngredients(VanillaCookingExpandedVariety_Settings.numberOfIngredients / 2, pawn));
+                }
+                else
+                {
+                    if (pawns_and_diet[pawn].last10Meals?.Count > VanillaCookingExpandedVariety_Settings.numberOfMeals)
+                    {
+                        pawns_and_diet[pawn].last10Meals = Util.TakeLast(pawns_and_diet[pawn].last10Meals, VanillaCookingExpandedVariety_Settings.numberOfMeals).ToList();
+                    }
+                    if (pawns_and_diet[pawn].last10Ingredients?.Count > VanillaCookingExpandedVariety_Settings.numberOfIngredients)
+                    {
+                        pawns_and_diet[pawn].last10Ingredients = Util.TakeLast(pawns_and_diet[pawn].last10Ingredients, VanillaCookingExpandedVariety_Settings.numberOfIngredients).ToList();
+                    }
+                    pawns_and_diet[pawn].last10Meals.RemoveWhere(x => x is null);
+                    pawns_and_diet[pawn].last10Ingredients.RemoveWhere(x => x is null);
+                }
+
+                if (!pawns_and_favourites.ContainsKey(pawn))
+                {
+                    pawns_and_favourites[pawn] = [Util.GenerateFavouriteFood(pawn)];
+                }
+                else
                 {
                     pawns_and_favourites[pawn].RemoveWhere(x => x is null);
                     if (pawns_and_favourites[pawn].Count() == 0) { pawns_and_favourites[pawn] = [Util.GenerateFavouriteFood(pawn)]; }
                 }
+
             }
 
         }
+        
 
         
 
@@ -104,13 +112,13 @@ public class GameComponent_FoodVariety : GameComponent
             }
         }
 
-        if (pawns_and_diet[p].last10Meals?.Count > 10)
+        if (pawns_and_diet[p].last10Meals?.Count > VanillaCookingExpandedVariety_Settings.numberOfMeals)
         {
-            pawns_and_diet[p].last10Meals = Util.TakeLast(pawns_and_diet[p].last10Meals, 10).ToList();
+            pawns_and_diet[p].last10Meals = Util.TakeLast(pawns_and_diet[p].last10Meals, VanillaCookingExpandedVariety_Settings.numberOfMeals).ToList();
         }
-        if (pawns_and_diet[p].last10Ingredients?.Count > 10)
+        if (pawns_and_diet[p].last10Ingredients?.Count > VanillaCookingExpandedVariety_Settings.numberOfIngredients)
         {
-            pawns_and_diet[p].last10Ingredients = Util.TakeLast(pawns_and_diet[p].last10Ingredients, 10).ToList();
+            pawns_and_diet[p].last10Ingredients = Util.TakeLast(pawns_and_diet[p].last10Ingredients, VanillaCookingExpandedVariety_Settings.numberOfIngredients).ToList();
         }
     }
 
@@ -141,7 +149,7 @@ public class GameComponent_FoodVariety : GameComponent
                 bonus += 2;
             }
         }
-        return pawns_and_diet[p].last10Meals.Distinct().Count() + bonus;
+        return (pawns_and_diet[p].last10Meals.Distinct().Count() + bonus)  ;
     }
 
     public static float IngredientVariety(Pawn p)
@@ -155,12 +163,18 @@ public class GameComponent_FoodVariety : GameComponent
             }
         }
 
-        return pawns_and_diet[p].last10Ingredients.Distinct().Count() + bonus;
+        return (pawns_and_diet[p].last10Ingredients.Distinct().Count() + bonus) ;
     }
 
     public static float Variety(Pawn p)
     {
-        return (MealVariety(p) + IngredientVariety(p)) / 20;
+
+
+
+        return (
+            (MealVariety(p) * (10f / VanillaCookingExpandedVariety_Settings.numberOfMeals))
+            + (IngredientVariety(p) * (10f / VanillaCookingExpandedVariety_Settings.numberOfIngredients))
+            )/20;
 
     }
 

@@ -34,7 +34,14 @@ public class Need_FoodVariety : Need
 
     public override void NeedInterval()
     {
-        CurLevel = GameComponent_FoodVariety.Variety(pawn);
+        if (ShowOnNeedList) { 
+            CurLevel = GameComponent_FoodVariety.Variety(pawn); 
+        }
+        if (pawn.IsHashIntervalTick(6000))
+        {
+            GameComponent_FoodVariety.RefreshList(null);
+        }
+        
     }
 
     public override void SetInitialLevel()
