@@ -1,0 +1,15 @@
+<loadFolders>
+	
+	<v1.5>
+		<li>/</li>
+		<li>1.5</li>
+		
+		<li IfModActive="vanillaracesexpanded.fungoid">1.5/Mods/VREFungoid</li>
+		<li IfModActive="vanillaracesexpanded.pigskin">1.5/Mods/VREPigskin</li>
+		<li IfModActive="vanillaracesexpanded.insector">1.5/Mods/VREInsector</li>
+		<li IfModActive="sarg.alphagenes">1.5/Mods/AlphaGenes</li>
+		
+	</v1.5>
+</loadFolders>
+
+

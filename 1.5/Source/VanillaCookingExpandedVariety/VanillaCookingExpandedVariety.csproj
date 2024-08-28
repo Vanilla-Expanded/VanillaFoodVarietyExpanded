@@ -306,6 +306,7 @@
     <Compile Include="BookOutcomeDoers\ReadingOutcomeDoerJoyFactorModifierGetExtraFavourite.cs" />
     <Compile Include="BookOutcomeDoers\Properties\BookOutcomeProperties_JoyFactorModifierGetExtraFavourite.cs" />
     <Compile Include="Books\Book_Ingredient.cs" />
+    <Compile Include="Defs\BlacklistedIngredientDefs.cs" />
     <Compile Include="GameComponents\GameComponent_FoodVariety.cs" />
     <Compile Include="Harmony\StoryWatcher_PopAdaptation_Notify_PawnEvent.cs" />
     <Compile Include="Harmony\HarmonyInstance.cs" />
@@ -317,6 +318,7 @@
     <Compile Include="Options\SettingsHelper.cs" />
     <Compile Include="PawnDiet\PawnDiet.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="StaticCollections\StaticCollectionsClass.cs" />
     <Compile Include="ThoughtWorkers\ThoughtWorker_NeedVariety.cs" />
     <Compile Include="Utility\Util.cs" />
     <Compile Include="Dialogs and Windows\Window_Details.cs" />

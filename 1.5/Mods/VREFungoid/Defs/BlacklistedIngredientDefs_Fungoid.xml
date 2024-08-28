@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Defs>
+	<VanillaCookingExpandedVariety.BlacklistedIngredientDefs>
+		<defName>VCEV_BlacklistedIngredientDefs_Fungoid</defName>
+		<blacklistedIngredients>
+			<li>RawFungus</li>			
+		</blacklistedIngredients>		
+	</VanillaCookingExpandedVariety.BlacklistedIngredientDefs>
+</Defs>

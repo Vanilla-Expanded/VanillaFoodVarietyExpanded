@@ -25,6 +25,7 @@ namespace VanillaCookingExpandedVariety
             return 
                 
             x.ingestible != null 
+            && !StaticCollectionsClass.blacklistedIngredients.Contains(x)
             && (!x.IsDrug || (x.IsDrug && (x.GetCompProperties<CompProperties_Drug>()?.chemical == ChemicalDefOf.Alcohol|| x.GetCompProperties<CompProperties_Drug>()?.chemical == InternalDefOf.VBE_Caffeine)))
             && (x.ingestible?.HumanEdible == true || x.ingredient?.mergeCompatibilityTags?.Contains("Condiments")==true)
             && !x.IsCorpse
