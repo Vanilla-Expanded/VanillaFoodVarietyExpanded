@@ -43,7 +43,7 @@ namespace VanillaCookingExpandedVariety
                         || y.def == PreceptDefOf.Cannibalism_RequiredStrong == true) ==true)
                    )
                )
-           
+            
             && (
                     (Find.IdeoManager.classicMode)
                     ||
