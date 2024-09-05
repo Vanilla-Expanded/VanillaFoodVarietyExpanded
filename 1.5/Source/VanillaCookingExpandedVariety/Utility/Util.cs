@@ -34,7 +34,7 @@ namespace VanillaCookingExpandedVariety
             && !x.defName.Contains("VCE_Ruined")
             && x.thingCategories?.Contains(ThingCategoryDefOf.EggsFertilized)!=true
             && (x != ThingDefOf.HemogenPack || (x == ThingDefOf.HemogenPack && p?.genes?.HasActiveGene(GeneDefOf.Hemogenic)==true))
-            && (x != ThingDefOf.Meat_Human 
+            && (x.ingestible.sourceDef == ThingDefOf.Human 
                 || 
                   (  
                         (x == ThingDefOf.Meat_Human) 
