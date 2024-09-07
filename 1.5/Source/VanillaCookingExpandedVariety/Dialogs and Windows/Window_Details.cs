@@ -73,7 +73,7 @@ namespace VanillaCookingExpandedVariety
             {
                 Rect pawnFavouriteFoodImage = new Rect((i*(64 +10)) + 160 , outRect.yMin + 30, 64, 64);
                 
-                GUI.DrawTexture(pawnFavouriteFoodImage, GetTextureOrAnimalIfMeat(GameComponent_FoodVariety.pawns_and_favourites[pawn][i], out color), ScaleMode.ScaleToFit, alphaBlend: true, 0f, color, 0f, 0f);
+                GUI.DrawTexture(pawnFavouriteFoodImage, Util.GetTextureOrAnimalIfMeat(GameComponent_FoodVariety.pawns_and_favourites[pawn][i], out color), ScaleMode.ScaleToFit, alphaBlend: true, 0f, color, 0f, 0f);
                 TooltipHandler.TipRegion(pawnFavouriteFoodImage, GameComponent_FoodVariety.pawns_and_favourites[pawn][i].LabelCap + ": " + GameComponent_FoodVariety.pawns_and_favourites[pawn][i].description + "\n\n" + "VCE_FavouriteFoodEffects".Translate());
 
             }
@@ -89,7 +89,7 @@ namespace VanillaCookingExpandedVariety
                 Rect pawnDietDetailsNInside = pawnDietDetailsN.ContractedBy(2);
                 if(i<GameComponent_FoodVariety.pawns_and_diet[pawn].last10Meals.Count())
                 {
-                    GUI.DrawTexture(pawnDietDetailsNInside, GetTextureOrAnimalIfMeat(GameComponent_FoodVariety.pawns_and_diet[pawn].last10Meals[i], out color), ScaleMode.ScaleToFit, alphaBlend: true, 0f, color, 0f, 0f);
+                    GUI.DrawTexture(pawnDietDetailsNInside, Util.GetTextureOrAnimalIfMeat(GameComponent_FoodVariety.pawns_and_diet[pawn].last10Meals[i], out color), ScaleMode.ScaleToFit, alphaBlend: true, 0f, color, 0f, 0f);
                     TooltipHandler.TipRegion(pawnDietDetailsNInside, GameComponent_FoodVariety.pawns_and_diet[pawn].last10Meals[i].LabelCap + ": " + GameComponent_FoodVariety.pawns_and_diet[pawn].last10Meals[i].description);
                 }
                 else
@@ -111,7 +111,7 @@ namespace VanillaCookingExpandedVariety
                 Rect pawnDietDetailsIngredientsNInside = pawnDietDetailsIngredientsN.ContractedBy(2);
                 if (i < GameComponent_FoodVariety.pawns_and_diet[pawn].last10Ingredients.Count())
                 {
-                    GUI.DrawTexture(pawnDietDetailsIngredientsNInside, GetTextureOrAnimalIfMeat(GameComponent_FoodVariety.pawns_and_diet[pawn].last10Ingredients[i], out color), ScaleMode.ScaleToFit, alphaBlend: true, 0f, color, 0f, 0f);
+                    GUI.DrawTexture(pawnDietDetailsIngredientsNInside, Util.GetTextureOrAnimalIfMeat(GameComponent_FoodVariety.pawns_and_diet[pawn].last10Ingredients[i], out color), ScaleMode.ScaleToFit, alphaBlend: true, 0f, color, 0f, 0f);
                     TooltipHandler.TipRegion(pawnDietDetailsIngredientsNInside, GameComponent_FoodVariety.pawns_and_diet[pawn].last10Ingredients[i].LabelCap + ": " + GameComponent_FoodVariety.pawns_and_diet[pawn].last10Ingredients[i].description);
                 }
                 else
@@ -161,20 +161,7 @@ namespace VanillaCookingExpandedVariety
            
         }
 
-        public Texture2D GetTextureOrAnimalIfMeat(ThingDef thingDef, out Color color)
-        {
-            if (thingDef.IsMeat)
-            {
-                PawnKindDef animal = DefDatabase<PawnKindDef>.AllDefsListForReading.Where(x => x.RaceProps.meatDef == thingDef).FirstOrFallback(null);
-                if (animal != null)
-                {
-                    color = animal.lifeStages.Last().bodyGraphicData.Graphic.Color;
-                    return ContentFinder<Texture2D>.Get(animal.lifeStages.Last().bodyGraphicData.Graphic.path + "_east");
-                }
-            }
-            color = Color.white;
-            return thingDef.uiIcon;
-        }
+        
 
         public float SizeOfTiles (int numberToScale,int slotNumber,int max)
         {

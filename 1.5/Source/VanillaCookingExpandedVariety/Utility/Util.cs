@@ -34,12 +34,12 @@ namespace VanillaCookingExpandedVariety
             && !x.defName.Contains("VCE_Ruined")
             && x.thingCategories?.Contains(ThingCategoryDefOf.EggsFertilized)!=true
             && (x != ThingDefOf.HemogenPack || (x == ThingDefOf.HemogenPack && p?.genes?.HasActiveGene(GeneDefOf.Hemogenic)==true))
-            && (x.ingestible.sourceDef == ThingDefOf.Human 
+            && (x.ingestible.sourceDef != ThingDefOf.Human 
                 || 
                   (  
-                        (x == ThingDefOf.Meat_Human) 
-                        && (p?.story?.traits?.HasTrait(InternalDefOf.Cannibal) == true)                      
-                        && (Current.Game.World?.factionManager?.OfPlayer?.ideos?.PrimaryIdeo?.PreceptsListForReading?.ContainsAny(y => y.def == PreceptDefOf.Cannibalism_Preferred==true || y.def == PreceptDefOf.Cannibalism_RequiredRavenous == true
+                        (x.ingestible.sourceDef == ThingDefOf.Human) 
+                        && ((p?.story?.traits?.HasTrait(InternalDefOf.Cannibal) == true)                      
+                        || Current.Game.World?.factionManager?.OfPlayer?.ideos?.PrimaryIdeo?.PreceptsListForReading?.ContainsAny(y => y.def == PreceptDefOf.Cannibalism_Preferred==true || y.def == PreceptDefOf.Cannibalism_RequiredRavenous == true
                         || y.def == PreceptDefOf.Cannibalism_RequiredStrong == true) ==true)
                    )
                )
@@ -87,6 +87,25 @@ namespace VanillaCookingExpandedVariety
         public static List<ThingDef> GenerateNDistinctIngredients(int number, Pawn p)
         {
             return DefDatabase<ThingDef>.AllDefsListForReading.Where(x => FoodValidator(x,p) && x.ingestible?.foodType != FoodTypeFlags.Meal).InRandomOrder().Take(number).ToList();
+        }
+
+        public static Texture2D GetTextureOrAnimalIfMeat(ThingDef thingDef, out Color color)
+        {
+            if (thingDef.IsMeat && thingDef != ThingDefOf.Meat_Human)
+            {
+                PawnKindDef animal = DefDatabase<PawnKindDef>.AllDefsListForReading.Where(x => x.RaceProps.meatDef == thingDef).FirstOrFallback(null);
+                if (animal?.lifeStages != null)
+                {
+                    color = animal.lifeStages.Last().bodyGraphicData.Graphic.Color;
+                    return ContentFinder<Texture2D>.Get(animal.lifeStages.Last().bodyGraphicData.Graphic.path + "_east");
+                }
+            }
+            color = Color.white;
+            if (thingDef.graphicData.color != null)
+            {
+                color = thingDef.graphicData.color;
+            }           
+            return thingDef.uiIcon;
         }
 
 
