@@ -4,6 +4,7 @@
 		<defName>VCEV_BlacklistedIngredientDefs_AlphaAnimals</defName>
 		<blacklistedIngredients>
 			<li>AA_RottingMoundItem</li>	
+			<li>AA_RottingMound</li>
 		
 		</blacklistedIngredients>		
 	</VanillaCookingExpandedVariety.BlacklistedIngredientDefs>
