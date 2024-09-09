@@ -8,7 +8,8 @@
 		<li IfModActive="vanillaracesexpanded.pigskin">1.5/Mods/VREPigskin</li>
 		<li IfModActive="vanillaracesexpanded.insector">1.5/Mods/VREInsector</li>
 		<li IfModActive="sarg.alphagenes">1.5/Mods/AlphaGenes</li>
-		
+		<li IfModActive="sarg.alphaanimals">1.5/Mods/AlphaAnimals</li>
+		<li IfModActive="VanillaExpanded.VGeneticsE">1.5/Mods/VEGenetics</li>
 	</v1.5>
 </loadFolders>
 

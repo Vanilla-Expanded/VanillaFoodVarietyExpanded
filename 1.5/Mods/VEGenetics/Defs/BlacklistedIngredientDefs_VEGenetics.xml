@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Defs>
+	<VanillaCookingExpandedVariety.BlacklistedIngredientDefs>
+		<defName>VCEV_BlacklistedIngredientDefs_VEgenetics</defName>
+		<blacklistedIngredients>
+			<li>GR_Castoreum</li>	
+			<li>GR_ElectroEgg</li>
+			<li>GR_PoisonAmpoule</li>
+		
+		</blacklistedIngredients>		
+	</VanillaCookingExpandedVariety.BlacklistedIngredientDefs>
+</Defs>
