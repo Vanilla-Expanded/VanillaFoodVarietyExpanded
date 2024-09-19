@@ -21,8 +21,8 @@
 	<VCEV_NewFavouriteGained>{0} has decided that {1} is now their favourite food too!</VCEV_NewFavouriteGained>
 	<VCEV_AlreadyFavourite>{1} is already {0}'s favourite food! The recipe book won't provide further insights</VCEV_AlreadyFavourite>
 	
-	<VCEV_ThisIsFavourite>This is {PAWN_nameDef}s favourite meal, and counts as two meals for the purpose of food variety.</VCEV_ThisIsFavourite>
-	<VCEV_ThisIsFavouriteIng>This is {PAWN_nameDef}s favourite ingredient, and counts as two ingredients for the purpose of food variety.</VCEV_ThisIsFavouriteIng>
+	<VCEV_ThisIsFavourite>This is {PAWN_nameDef}'s favourite meal, and counts as two meals for the purpose of food variety.</VCEV_ThisIsFavourite>
+	<VCEV_ThisIsFavouriteIng>This is {PAWN_nameDef}'s favourite ingredient, and counts as two ingredients for the purpose of food variety.</VCEV_ThisIsFavouriteIng>
 	<!-- Mod options -->
 	
 	<VCEV_MoodMultiplier>Mood offset</VCEV_MoodMultiplier>
