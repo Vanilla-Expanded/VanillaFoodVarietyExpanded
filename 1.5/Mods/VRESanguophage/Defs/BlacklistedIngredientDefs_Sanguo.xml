@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Defs>
+	<VanillaCookingExpandedVariety.BlacklistedIngredientDefs>
+		<defName>VCEV_BlacklistedIngredientDefs_Sanguo</defName>
+		<blacklistedIngredients>
+			<li>VRE_HemogenPack_Animal</li>
+			<li>VRE_HemogenPack_Corpse</li>
+			<li>VRE_HemogenPack_Sanguophage</li>
+		</blacklistedIngredients>
+	</VanillaCookingExpandedVariety.BlacklistedIngredientDefs>
+</Defs>

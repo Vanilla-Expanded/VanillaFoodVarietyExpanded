@@ -62,7 +62,7 @@ public class Need_FoodVariety : Need
        
     }
 
-    public override void DrawOnGUI(Rect rect, int maxThresholdMarkers = 2147483647, float customMargin = -1, bool drawArrows = true, bool doTooltip = true,
+    public override void DrawOnGUI(Rect rect, int maxThresholdMarkers = 2147483647, float customMargin =80, bool drawArrows = true, bool doTooltip = true,
         Rect? rectForTooltip = null, bool drawLabel = true)
     {
         var tooltipRect = rectForTooltip ?? rect;
@@ -73,7 +73,7 @@ public class Need_FoodVariety : Need
        
         GUI.DrawTexture(needRect, ContentFinder<Texture2D>.Get("UI/VCEV_MagnifyingGlass", true), ScaleMode.ScaleToFit);
 
-        if (Mouse.IsOver(needRect))
+        if (Mouse.IsOver(needRect)) 
         {
             Widgets.DrawHighlight(needRect);
             doTooltip = false;

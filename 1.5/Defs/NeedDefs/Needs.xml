@@ -6,7 +6,7 @@
         <label>food variety</label>
         <description>Represents the assortment of different foods in a colonist's diet, reflecting their ability to access and consume a wide range of nutrients and flavors, calculated as an average of the variety in meals and the variety in ingredients in those meals.\n\nLow values will cause a mood penalty, while higher values will cause a mood bonus.</description>
         <baseLevel>0</baseLevel>
-        <listPriority>-110</listPriority>
+        <listPriority>400</listPriority>
         <minIntelligence>Humanlike</minIntelligence>
         <colonistsOnly>true</colonistsOnly>
         <neverOnPrisoner>true</neverOnPrisoner>

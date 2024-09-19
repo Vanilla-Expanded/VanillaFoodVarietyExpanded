@@ -10,6 +10,7 @@
 		<li IfModActive="sarg.alphagenes">1.5/Mods/AlphaGenes</li>
 		<li IfModActive="sarg.alphaanimals">1.5/Mods/AlphaAnimals</li>
 		<li IfModActive="VanillaExpanded.VGeneticsE">1.5/Mods/VEGenetics</li>
+		<li IfModActive="vanillaracesexpanded.sanguophage">1.5/Mods/VRESanguophage</li>
 	</v1.5>
 </loadFolders>
 

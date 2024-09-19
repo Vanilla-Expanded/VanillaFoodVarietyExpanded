@@ -80,12 +80,12 @@ public class GameComponent_FoodVariety : GameComponent
 
                 if (!pawns_and_favourites.ContainsKey(pawn))
                 {
-                    pawns_and_favourites[pawn] = [Util.GenerateFavouriteFood(pawn)];
+                    pawns_and_favourites[pawn] = new List<ThingDef> { Util.GenerateFavouriteFood(pawn) };
                 }
                 else
                 {
                     pawns_and_favourites[pawn].RemoveWhere(x => x is null);
-                    if (pawns_and_favourites[pawn].Count() == 0) { pawns_and_favourites[pawn] = [Util.GenerateFavouriteFood(pawn)]; }
+                    if (pawns_and_favourites[pawn].Count() == 0) { pawns_and_favourites[pawn] = new List<ThingDef> { Util.GenerateFavouriteFood(pawn) }; }
                 }
 
             }
