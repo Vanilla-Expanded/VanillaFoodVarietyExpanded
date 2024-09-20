@@ -3,7 +3,7 @@
 	<v1.5>
 		<li>/</li>
 		<li>1.5</li>
-		
+		<li IfModActive="Ludeon.RimWorld.Biotech">1.5/Mods/Biotech</li>
 		<li IfModActive="vanillaracesexpanded.fungoid">1.5/Mods/VREFungoid</li>
 		<li IfModActive="vanillaracesexpanded.pigskin">1.5/Mods/VREPigskin</li>
 		<li IfModActive="vanillaracesexpanded.insector">1.5/Mods/VREInsector</li>

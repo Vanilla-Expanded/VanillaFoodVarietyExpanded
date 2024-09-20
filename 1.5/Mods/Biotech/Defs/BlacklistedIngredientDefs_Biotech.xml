@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Defs>
+	<VanillaCookingExpandedVariety.BlacklistedIngredientDefs>
+		<defName>VCEV_BlacklistedIngredientDefs_Biotech</defName>
+		<blacklistedIngredients>
+			<li>BabyFood</li>
+			
+		</blacklistedIngredients>
+	</VanillaCookingExpandedVariety.BlacklistedIngredientDefs>
+</Defs>
