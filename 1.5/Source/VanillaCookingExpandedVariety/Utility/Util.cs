@@ -92,6 +92,26 @@ namespace VanillaCookingExpandedVariety
 
         public static Texture2D GetTextureOrAnimalIfMeat(ThingDef thingDef, out Color color)
         {
+            if (thingDef.IsCorpse)
+            {
+                if(thingDef.race.meatDef == ThingDefOf.Meat_Human)
+                {
+                    color = Color.white;
+                    return ThingDefOf.Meat_Human.uiIcon;
+                }
+                else {
+                    PawnKindDef animal = DefDatabase<PawnKindDef>.AllDefsListForReading.Where(x => x.race.race == thingDef.race).FirstOrFallback(null);
+            
+                    if (animal?.lifeStages != null)
+                    {
+                        color = animal.lifeStages.Last().bodyGraphicData.Graphic.Color;
+                        return ContentFinder<Texture2D>.Get(animal.lifeStages.Last().bodyGraphicData.Graphic.path + "_east");
+                    }
+
+                }
+                
+            }        
+        
             if (thingDef.IsMeat && thingDef != ThingDefOf.Meat_Human)
             {
                 PawnKindDef animal = DefDatabase<PawnKindDef>.AllDefsListForReading.Where(x => x.RaceProps.meatDef == thingDef).FirstOrFallback(null);
