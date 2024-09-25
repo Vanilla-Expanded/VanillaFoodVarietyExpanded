@@ -9,18 +9,18 @@ namespace VanillaCookingExpandedVariety
     {
         public override ThoughtState CurrentStateInternal(Pawn p)
         {
-            if (p.needs?.TryGetNeed<Need_FoodVariety>() == null)
+            if (!GameComponent_FoodVariety.colonists_with_foodvariety_need.Contains(p))
             {
                 return ThoughtState.Inactive;
             }
 
             Need_FoodVariety need = p.needs.TryGetNeed<Need_FoodVariety>();
 
-            if (need.CurLevel <= VanillaCookingExpandedVariety_Settings.lowVarietyThreshold)
+            if (need?.CurLevel <= VanillaCookingExpandedVariety_Settings.lowVarietyThreshold)
             {
                 return ThoughtState.ActiveAtStage(0);
             }
-            else if (need.CurLevel >= VanillaCookingExpandedVariety_Settings.highVarietyThreshold) {
+            else if (need?.CurLevel >= VanillaCookingExpandedVariety_Settings.highVarietyThreshold) {
                 return ThoughtState.ActiveAtStage(1);
             }
 
