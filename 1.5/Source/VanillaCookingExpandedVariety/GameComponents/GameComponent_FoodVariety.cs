@@ -104,12 +104,17 @@ public class GameComponent_FoodVariety : GameComponent
 
         if (thing.TryGetComp<CompIngredients>() != null)
         {
-            foreach (ThingDef ingredient in thing.TryGetComp<CompIngredients>().ingredients)
+            if(thing.def != ThingDefOf.MealNutrientPaste)
             {
-                pawns_and_diet[p].last10Ingredients.Add(ingredient);
-
-
+                foreach (ThingDef ingredient in thing.TryGetComp<CompIngredients>().ingredients)
+                {
+                    pawns_and_diet[p].last10Ingredients.Add(ingredient);
+                }
+            }else
+            {
+                pawns_and_diet[p].last10Ingredients.Add(ThingDefOf.MealNutrientPaste);
             }
+            
         }
 
         if (pawns_and_diet[p].last10Meals?.Count > VanillaCookingExpandedVariety_Settings.numberOfMeals)
