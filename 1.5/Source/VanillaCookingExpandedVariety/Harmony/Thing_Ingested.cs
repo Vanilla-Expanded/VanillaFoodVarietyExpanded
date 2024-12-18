@@ -15,7 +15,8 @@ namespace VanillaCookingExpandedVariety
         [HarmonyPostfix]
         public static void CommunicateIngestion(Thing __instance, Pawn ingester)
         {
-            if ( GameComponent_FoodVariety.colonists_with_foodvariety_need.Contains(ingester)&& !__instance.def.defName.Contains("DBH_WaterBottle"))
+            if ( GameComponent_FoodVariety.colonists_with_foodvariety_need.Contains(ingester)&& !__instance.def.defName.Contains("DBH_WaterBottle")&&
+                !StaticCollectionsClass.blacklistedFoods.Contains(__instance.def))
             {
                 GameComponent_FoodVariety.AddEatenThingsToList(ingester, __instance);
 

@@ -306,6 +306,7 @@
     <Compile Include="BookOutcomeDoers\ReadingOutcomeDoerJoyFactorModifierGetExtraFavourite.cs" />
     <Compile Include="BookOutcomeDoers\Properties\BookOutcomeProperties_JoyFactorModifierGetExtraFavourite.cs" />
     <Compile Include="Books\Book_Ingredient.cs" />
+    <Compile Include="Defs\BlacklistedFoodDefs.cs" />
     <Compile Include="Defs\BlacklistedIngredientDefs.cs" />
     <Compile Include="GameComponents\GameComponent_FoodVariety.cs" />
     <Compile Include="Harmony\StoryWatcher_PopAdaptation_Notify_PawnEvent.cs" />

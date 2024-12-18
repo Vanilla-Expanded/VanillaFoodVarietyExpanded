@@ -14,6 +14,8 @@ namespace VanillaCookingExpandedVariety
 
 
         public static List<ThingDef> blacklistedIngredients = new List<ThingDef>();
+        public static List<ThingDef> blacklistedFoods = new List<ThingDef>();
+
 
         static StaticCollectionsClass()
         {
@@ -25,7 +27,12 @@ namespace VanillaCookingExpandedVariety
                 blacklistedIngredients.AddRange(individualList.blacklistedIngredients);
             }
 
-
+            blacklistedFoods.Clear();
+            List<BlacklistedFoodDefs> allBlacklistedFoods = DefDatabase<BlacklistedFoodDefs>.AllDefsListForReading;
+            foreach (BlacklistedFoodDefs individualList in allBlacklistedFoods)
+            {
+                blacklistedFoods.AddRange(individualList.blacklistedFoods);
+            }
 
         }
 
