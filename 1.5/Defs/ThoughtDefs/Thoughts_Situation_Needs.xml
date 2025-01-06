@@ -1,29 +1,24 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <Defs>
-
-
-
-
-  <ThoughtDef>
-    <defName>VCEV_NeedVariety</defName>
-    <workerClass>VanillaCookingExpandedVariety.ThoughtWorker_NeedVariety</workerClass>
-	<developmentalStageFilter>Adult</developmentalStageFilter>
-    <validWhileDespawned>true</validWhileDespawned>
-    <stages>
-      <li>
-        <label>terrible food variety</label>
-        <description>I know this is not a haute cuisine restaurant, but it is terrible to eat the same thing every single day!</description>
-        <baseMoodEffect>-1</baseMoodEffect>
-      </li>    
-     
-      <li>
-        <label>amazing food variety</label>
-        <description>We have a very varied and rich diet, it's amazing!</description>
-        <baseMoodEffect>1</baseMoodEffect>
-      </li>
-    </stages>
-  </ThoughtDef>
-
- 
-
+	<ThoughtDef>
+		<defName>VCEV_NeedVariety</defName>
+		<workerClass>VanillaCookingExpandedVariety.ThoughtWorker_NeedVariety</workerClass>
+		<developmentalStageFilter>Adult</developmentalStageFilter>
+		<validWhileDespawned>true</validWhileDespawned>
+		<nullifyingTraits>
+			<li MayRequire="Ludeon.RimWorld.Anomaly">BodyMastery</li>
+		</nullifyingTraits>
+		<stages>
+			<li>
+				<label>terrible food variety</label>
+				<description>I know this is not a haute cuisine restaurant, but it is terrible to eat the same thing every single day!</description>
+				<baseMoodEffect>-1</baseMoodEffect>
+			</li>
+			<li>
+				<label>amazing food variety</label>
+				<description>We have a very varied and rich diet, it's amazing!</description>
+				<baseMoodEffect>1</baseMoodEffect>
+			</li>
+		</stages>
+	</ThoughtDef>
 </Defs>
