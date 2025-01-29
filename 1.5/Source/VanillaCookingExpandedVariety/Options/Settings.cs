@@ -29,6 +29,9 @@ namespace VanillaCookingExpandedVariety
         public static int numberOfIngredients = baseNumberOfIngredients;
         public const int baseNumberOfIngredients = 7;
 
+        public static int numberOfIngredientStacked = basenumberOfIngredientStacked;
+        public const int basenumberOfIngredientStacked = 3;
+
 
         public override void ExposeData()
         {
@@ -39,10 +42,11 @@ namespace VanillaCookingExpandedVariety
             Scribe_Values.Look(ref highVarietyThreshold, "highVarietyThreshold", baseHighVarietyThreshold);
             Scribe_Values.Look(ref numberOfMeals, "numberOfMeals", baseNumberOfMeals);
             Scribe_Values.Look(ref numberOfIngredients, "numberOfIngredients", baseNumberOfIngredients);
+            Scribe_Values.Look(ref numberOfIngredientStacked, "numberOfIngredientStacked", basenumberOfIngredientStacked);
 
         }
 
-      
+
 
         public static void DoWindowContents(Rect inRect)
         {
@@ -90,6 +94,13 @@ namespace VanillaCookingExpandedVariety
             if (ls.Settings_Button("VCEV_Reset".Translate(), new Rect(0f, ingredientsLabel.position.y + 35, 250f, 29f)))
             {
                 numberOfIngredients = baseNumberOfIngredients;
+            }
+            var stackLevel = ls.LabelPlusButton("VCEV_NumberOfIngredientStacked".Translate() + ": " + numberOfIngredientStacked, "VCEV_NumberOfIngredientStackedDesc".Translate());
+            numberOfIngredientStacked = (int)Math.Round(ls.Slider(numberOfIngredientStacked, 3, 10), 0);
+
+            if (ls.Settings_Button("VCEV_Reset".Translate(), new Rect(0f, stackLevel.position.y + 35, 250f, 29f)))
+            {
+                numberOfIngredientStacked = basenumberOfIngredientStacked;
             }
 
             ls.End();

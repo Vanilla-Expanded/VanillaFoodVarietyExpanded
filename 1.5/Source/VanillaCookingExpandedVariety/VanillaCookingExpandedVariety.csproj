@@ -309,6 +309,7 @@
     <Compile Include="Defs\BlacklistedFoodDefs.cs" />
     <Compile Include="Defs\BlacklistedIngredientDefs.cs" />
     <Compile Include="GameComponents\GameComponent_FoodVariety.cs" />
+    <Compile Include="Harmony\CompIngredients_MergeIngredients.cs" />
     <Compile Include="Harmony\StoryWatcher_PopAdaptation_Notify_PawnEvent.cs" />
     <Compile Include="Harmony\HarmonyInstance.cs" />
     <Compile Include="DefOfs\InternalDefOf.cs" />

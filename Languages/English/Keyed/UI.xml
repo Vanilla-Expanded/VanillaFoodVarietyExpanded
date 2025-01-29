@@ -40,4 +40,7 @@
 	
 	<VCEV_NumberOfIngredients>Number of latest ingredients to count</VCEV_NumberOfIngredients>
 	<VCEV_NumberOfIngredientsDesc>The food variety need level will be calculated by counting among this number of ingredients consumed. Default is 7 latest ingredients.</VCEV_NumberOfIngredientsDesc>
+	
+	<VCEV_NumberOfIngredientStacked>Number of ingredient stack per meal (requires reload)</VCEV_NumberOfIngredientStacked>
+	<VCEV_NumberOfIngredientStackedDesc>By default, vanilla meals start deleting "common" ingredients after 3 ingredients. This allows you to increase that limit. Requires a mod reload to take effect.</VCEV_NumberOfIngredientStackedDesc>
 </LanguageData>
