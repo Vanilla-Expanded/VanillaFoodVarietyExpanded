@@ -57,10 +57,11 @@ namespace VanillaCookingExpandedVariety
             }
         }
 
-        public override List<RulePack> GetTopicRulePacks()
+        public override IEnumerable<RulePack> GetTopicRulePacks()
         {
             rulepack = new RulePack();
-            rulepack.rulesStrings = new List<string> { "subject->" + Book.ingredient.LabelCap };
+            ReflectionCache.rulesStrings(rulepack) = new List<string> { "subject->" + Book.ingredient.LabelCap };
+          
             return new List<RulePack> { rulepack };
         }
 

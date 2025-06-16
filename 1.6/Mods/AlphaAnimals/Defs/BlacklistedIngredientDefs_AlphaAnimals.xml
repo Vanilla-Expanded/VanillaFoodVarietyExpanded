@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Defs>
+	<VanillaCookingExpandedVariety.BlacklistedIngredientDefs>
+		<defName>VCEV_BlacklistedIngredientDefs_AlphaAnimals</defName>
+		<blacklistedIngredients>
+			<li>AA_RottingMoundItem</li>	
+			<li>AA_RottingMound</li>
+		
+		</blacklistedIngredients>		
+	</VanillaCookingExpandedVariety.BlacklistedIngredientDefs>
+</Defs>

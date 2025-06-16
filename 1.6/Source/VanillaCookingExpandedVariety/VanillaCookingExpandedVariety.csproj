@@ -290,13 +290,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Krafs.Publicizer">
-      <Version>2.2.1</Version>
-      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
-      <PrivateAssets>all</PrivateAssets>
-    </PackageReference>
     <PackageReference Include="Lib.Harmony">
-      <Version>2.3.3</Version>
+      <Version>2.3.6</Version>
       <ExcludeAssets>runtime</ExcludeAssets>
       <IncludeAssets>compile; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
@@ -320,6 +315,7 @@
     <Compile Include="Options\SettingsHelper.cs" />
     <Compile Include="PawnDiet\PawnDiet.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ReflectionCache\ReflectionCache.cs" />
     <Compile Include="StaticCollections\StaticCollectionsClass.cs" />
     <Compile Include="ThoughtWorkers\ThoughtWorker_NeedVariety.cs" />
     <Compile Include="Utility\Util.cs" />

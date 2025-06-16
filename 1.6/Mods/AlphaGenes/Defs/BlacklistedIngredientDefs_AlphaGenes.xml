@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Defs>
+	<VanillaCookingExpandedVariety.BlacklistedIngredientDefs>
+		<defName>VCEV_BlacklistedIngredientDefs_AlphaGenes</defName>
+		<blacklistedIngredients>
+			<li>InsectJelly</li>	
+			<li>Chocolate</li>
+		
+		</blacklistedIngredients>		
+	</VanillaCookingExpandedVariety.BlacklistedIngredientDefs>
+</Defs>

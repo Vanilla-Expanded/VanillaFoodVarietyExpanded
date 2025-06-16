@@ -31,7 +31,7 @@ public class GameComponent_FoodVariety : GameComponent
     public static void RefreshList(Pawn pawnJustAdded)
     {
        
-        List<Pawn> pawns = PawnsFinder.AllMapsCaravansAndTravelingTransportPods_Alive_Colonists_NoSlaves;
+        List<Pawn> pawns = PawnsFinder.AllMapsCaravansAndTravellingTransporters_Alive_Colonists_NoSlaves;
         if (pawns.Count > 0)
         {
             if (pawnJustAdded != null)

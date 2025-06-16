@@ -7,7 +7,7 @@ namespace VanillaCookingExpandedVariety
 {
     public class ThoughtWorker_NeedVariety : ThoughtWorker
     {
-        public override ThoughtState CurrentStateInternal(Pawn p)
+        protected override ThoughtState CurrentStateInternal(Pawn p)
         {
             if (!GameComponent_FoodVariety.colonists_with_foodvariety_need.Contains(p))
             {
