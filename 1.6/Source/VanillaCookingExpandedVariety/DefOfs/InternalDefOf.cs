@@ -21,5 +21,8 @@ namespace VanillaCookingExpandedVariety
 
         [MayRequire("VanillaExpanded.VBrewE")]
         public static ChemicalDef VBE_Caffeine;
+
+        [MayRequire("vanillaracesexpanded.android")]
+        public static GeneDef VREA_Power;
     }
 }
