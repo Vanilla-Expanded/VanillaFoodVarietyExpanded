@@ -32,6 +32,8 @@ namespace VanillaCookingExpandedVariety
 
         public override void DoWindowContents(Rect inRect)
         {
+            var diet = GameComponent_FoodVariety.pawns_and_diet[pawn];
+
             Text.Font = GameFont.Small;
             var outRect = new Rect(inRect);
             outRect.yMin += 20f;
@@ -69,12 +71,12 @@ namespace VanillaCookingExpandedVariety
             Widgets.Label(pawnFavouriteFoodRect, "VCE_FavouriteFoodTextOnly".Translate());
             Color color = Color.white;
 
-            for (int i = 0; i < GameComponent_FoodVariety.pawns_and_favourites[pawn].Count; i++)
+            for (int i = 0; i < diet.favourites.Count; i++)
             {
                 Rect pawnFavouriteFoodImage = new Rect((i*(64 +10)) + 160 , outRect.yMin + 30, 64, 64);
                 
-                GUI.DrawTexture(pawnFavouriteFoodImage, Util.GetTextureOrAnimalIfMeat(GameComponent_FoodVariety.pawns_and_favourites[pawn][i], out color), ScaleMode.ScaleToFit, alphaBlend: true, 0f, color, 0f, 0f);
-                TooltipHandler.TipRegion(pawnFavouriteFoodImage, GameComponent_FoodVariety.pawns_and_favourites[pawn][i].LabelCap + ": " + GameComponent_FoodVariety.pawns_and_favourites[pawn][i].description + "\n\n" + "VCE_FavouriteFoodEffects".Translate());
+                GUI.DrawTexture(pawnFavouriteFoodImage, Util.GetTextureOrAnimalIfMeat(diet.favourites[i], out color), ScaleMode.ScaleToFit, alphaBlend: true, 0f, color, 0f, 0f);
+                TooltipHandler.TipRegion(pawnFavouriteFoodImage, diet.favourites[i].LabelCap + ": " + diet.favourites[i].description + "\n\n" + "VCE_FavouriteFoodEffects".Translate());
 
             }
 
@@ -87,13 +89,13 @@ namespace VanillaCookingExpandedVariety
                 SizeOfTiles(44, VanillaCookingExpandedVariety_Settings.numberOfMeals, 54), SizeOfTiles(44, VanillaCookingExpandedVariety_Settings.numberOfMeals, 54));
                 Widgets.DrawBoxSolidWithOutline(pawnDietDetailsN, fillColor, borderColor, 1);
                 Rect pawnDietDetailsNInside = pawnDietDetailsN.ContractedBy(2);
-                if(i<GameComponent_FoodVariety.pawns_and_diet[pawn].last10Meals.Count())
+                if(i<diet.last10Meals.Count())
                 {
-                    GUI.DrawTexture(pawnDietDetailsNInside, Util.GetTextureOrAnimalIfMeat(GameComponent_FoodVariety.pawns_and_diet[pawn].last10Meals[i], out color), ScaleMode.ScaleToFit, alphaBlend: true, 0f, color, 0f, 0f);
+                    GUI.DrawTexture(pawnDietDetailsNInside, Util.GetTextureOrAnimalIfMeat(diet.last10Meals[i], out color), ScaleMode.ScaleToFit, alphaBlend: true, 0f, color, 0f, 0f);
                     bool found = false;
-                    foreach (ThingDef thingDef in GameComponent_FoodVariety.pawns_and_favourites[pawn])
+                    foreach (ThingDef thingDef in diet.favourites)
                     {
-                        if (GameComponent_FoodVariety.pawns_and_diet[pawn].last10Meals[i]==thingDef)
+                        if (diet.last10Meals[i]==thingDef)
                         {
                             found = true;
                             Rect pawnDietDetailsNInsideHeart = new Rect(pawnDietDetailsNInside.xMax - 16, pawnDietDetailsNInside.y, 16, 16);
@@ -102,11 +104,11 @@ namespace VanillaCookingExpandedVariety
                     }
                     if (found)
                     {
-                        TooltipHandler.TipRegion(pawnDietDetailsNInside, GameComponent_FoodVariety.pawns_and_diet[pawn].last10Meals[i].LabelCap + ": " + GameComponent_FoodVariety.pawns_and_diet[pawn].last10Meals[i].description + "\n\n" + "VCEV_ThisIsFavourite".Translate(pawn.Named("PAWN")));
+                        TooltipHandler.TipRegion(pawnDietDetailsNInside, diet.last10Meals[i].LabelCap + ": " + diet.last10Meals[i].description + "\n\n" + "VCEV_ThisIsFavourite".Translate(pawn.Named("PAWN")));
                     }
                     else
                     {
-                        TooltipHandler.TipRegion(pawnDietDetailsNInside, GameComponent_FoodVariety.pawns_and_diet[pawn].last10Meals[i].LabelCap + ": " + GameComponent_FoodVariety.pawns_and_diet[pawn].last10Meals[i].description);
+                        TooltipHandler.TipRegion(pawnDietDetailsNInside, diet.last10Meals[i].LabelCap + ": " + diet.last10Meals[i].description);
                     }
 
                 }
@@ -129,13 +131,13 @@ namespace VanillaCookingExpandedVariety
                 SizeOfTiles(44, VanillaCookingExpandedVariety_Settings.numberOfIngredients, 54), SizeOfTiles(44, VanillaCookingExpandedVariety_Settings.numberOfIngredients, 54));
                 Widgets.DrawBoxSolidWithOutline(pawnDietDetailsIngredientsN, fillColor, borderColor, 1);
                 Rect pawnDietDetailsIngredientsNInside = pawnDietDetailsIngredientsN.ContractedBy(2);
-                if (i < GameComponent_FoodVariety.pawns_and_diet[pawn].last10Ingredients.Count())
+                if (i < diet.last10Ingredients.Count())
                 {
-                    GUI.DrawTexture(pawnDietDetailsIngredientsNInside, Util.GetTextureOrAnimalIfMeat(GameComponent_FoodVariety.pawns_and_diet[pawn].last10Ingredients[i], out color), ScaleMode.ScaleToFit, alphaBlend: true, 0f, color, 0f, 0f);
+                    GUI.DrawTexture(pawnDietDetailsIngredientsNInside, Util.GetTextureOrAnimalIfMeat(diet.last10Ingredients[i], out color), ScaleMode.ScaleToFit, alphaBlend: true, 0f, color, 0f, 0f);
                     bool found = false;
-                    foreach (ThingDef thingDef in GameComponent_FoodVariety.pawns_and_favourites[pawn])
+                    foreach (ThingDef thingDef in diet.favourites)
                     {
-                        if (GameComponent_FoodVariety.pawns_and_diet[pawn].last10Ingredients[i]==thingDef)
+                        if (diet.last10Ingredients[i]==thingDef)
                         {
                             found = true;
                             Rect pawnDietDetailsIngredientsNInsideHeart = new Rect(pawnDietDetailsIngredientsN.xMax - 16, pawnDietDetailsIngredientsN.y, 16, 16);
@@ -144,11 +146,11 @@ namespace VanillaCookingExpandedVariety
                     }
                     if (found)
                     {
-                        TooltipHandler.TipRegion(pawnDietDetailsIngredientsNInside, GameComponent_FoodVariety.pawns_and_diet[pawn].last10Ingredients[i].LabelCap + ": " + GameComponent_FoodVariety.pawns_and_diet[pawn].last10Ingredients[i].description+ "\n\n" + "VCEV_ThisIsFavouriteIng".Translate(pawn.Named("PAWN")));
+                        TooltipHandler.TipRegion(pawnDietDetailsIngredientsNInside, diet.last10Ingredients[i].LabelCap + ": " + diet.last10Ingredients[i].description+ "\n\n" + "VCEV_ThisIsFavouriteIng".Translate(pawn.Named("PAWN")));
                     }
                     else
                     {
-                        TooltipHandler.TipRegion(pawnDietDetailsIngredientsNInside, GameComponent_FoodVariety.pawns_and_diet[pawn].last10Ingredients[i].LabelCap + ": " + GameComponent_FoodVariety.pawns_and_diet[pawn].last10Ingredients[i].description);
+                        TooltipHandler.TipRegion(pawnDietDetailsIngredientsNInside, diet.last10Ingredients[i].LabelCap + ": " + diet.last10Ingredients[i].description);
                     }
                 }
                 else
@@ -161,9 +163,9 @@ namespace VanillaCookingExpandedVariety
             Rect foodVarietyRect = new Rect(0, outRect.yMin + 340, 160, 30f);
             Widgets.Label(foodVarietyRect, "VCE_MealVariety".Translate(GameComponent_FoodVariety.MealVariety(pawn), VanillaCookingExpandedVariety_Settings.numberOfMeals));
             bool mealHasFavourites = false;
-            foreach (ThingDef thingDef in GameComponent_FoodVariety.pawns_and_favourites[pawn])
+            foreach (ThingDef thingDef in diet.favourites)
             {
-                if (GameComponent_FoodVariety.pawns_and_diet[pawn].last10Meals.Contains(thingDef))
+                if (diet.last10Meals.Contains(thingDef))
                 {
                     mealHasFavourites = true;
                 }
@@ -179,9 +181,9 @@ namespace VanillaCookingExpandedVariety
             Rect ingredientVarietyRect = new Rect(170, outRect.yMin + 340, 150, 30f);
             Widgets.Label(ingredientVarietyRect, "VCE_IngredientVariety".Translate(GameComponent_FoodVariety.IngredientVariety(pawn), VanillaCookingExpandedVariety_Settings.numberOfIngredients));
             bool ingredientsHasFavourites = false;
-            foreach (ThingDef thingDef in GameComponent_FoodVariety.pawns_and_favourites[pawn])
+            foreach (ThingDef thingDef in diet.favourites)
             {
-                if (GameComponent_FoodVariety.pawns_and_diet[pawn].last10Ingredients.Contains(thingDef))
+                if (diet.last10Ingredients.Contains(thingDef))
                 {
                     ingredientsHasFavourites = true;
                 }

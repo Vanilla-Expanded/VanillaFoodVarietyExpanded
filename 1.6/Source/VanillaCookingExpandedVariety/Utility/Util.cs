@@ -63,6 +63,11 @@ namespace VanillaCookingExpandedVariety
             return source.Skip(Math.Max(0, source.Count() - N));
         }
 
+        public static void RemoveKeepLast<T>(this List<T> source, int countToKeep)
+        {
+            source.RemoveRange(0, Math.Max(0, source.Count - countToKeep));
+        }
+
         public static List<TaggedString> ThingDefsToLabels(IEnumerable<ThingDef> source)
         {
             List<TaggedString> returnList = new List<TaggedString>();

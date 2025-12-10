@@ -77,9 +77,10 @@ public class Need_FoodVariety : Need
         {
             Widgets.DrawHighlight(needRect);
             doTooltip = false;
-            TooltipHandler.TipRegion(needRect, "VCE_FavouriteFood".Translate(Util.ThingDefsToLabels(GameComponent_FoodVariety.pawns_and_favourites[pawn]).ToStringSafeEnumerable()) + "\n\n" +
-                "VCE_LastFoods".Translate(Util.ThingDefsToLabels(GameComponent_FoodVariety.pawns_and_diet[pawn]?.last10Meals).ToStringSafeEnumerable()) + "\n\n" +
-                "VCE_LastIngredients".Translate(Util.ThingDefsToLabels(GameComponent_FoodVariety.pawns_and_diet[pawn]?.last10Ingredients).ToStringSafeEnumerable()));
+            var diet = GameComponent_FoodVariety.pawns_and_diet[pawn];
+            TooltipHandler.TipRegion(needRect, "VCE_FavouriteFood".Translate(Util.ThingDefsToLabels(diet.favourites).ToStringSafeEnumerable()) + "\n\n" +
+                "VCE_LastFoods".Translate(Util.ThingDefsToLabels(diet.last10Meals).ToStringSafeEnumerable()) + "\n\n" +
+                "VCE_LastIngredients".Translate(Util.ThingDefsToLabels(diet.last10Ingredients).ToStringSafeEnumerable()));
         }
         if (Widgets.ButtonInvisible(needRect))
         {

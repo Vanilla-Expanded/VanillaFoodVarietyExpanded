@@ -39,13 +39,14 @@ namespace VanillaCookingExpandedVariety
             tickCounter++;
             if(tickCounter > Props.ticksToGetFavouriteIngredient)
             {
-                if (GameComponent_FoodVariety.pawns_and_favourites[reader]?.Count < 2)
+                var diet = GameComponent_FoodVariety.pawns_and_diet[reader];
+                if (diet.favourites?.Count < 2)
                 {
-                    GameComponent_FoodVariety.pawns_and_favourites[reader].Add(Book.ingredient);
-                    Messages.Message("VCEV_NewFavouriteGained".Translate(reader.NameShortColored, GameComponent_FoodVariety.pawns_and_favourites[reader][1].LabelCap), MessageTypeDefOf.PositiveEvent, true);
+                    diet.favourites.Add(Book.ingredient);
+                    Messages.Message("VCEV_NewFavouriteGained".Translate(reader.NameShortColored, diet.favourites[1].LabelCap), MessageTypeDefOf.PositiveEvent, true);
                     this.Book.Destroy();
                 }
-                else if (GameComponent_FoodVariety.pawns_and_favourites[reader]?.Contains(Book.ingredient) == false)
+                else if (diet.favourites?.Contains(Book.ingredient) == true)
                 {
                     Messages.Message("VCEV_AlreadyFavourite".Translate(reader.NameShortColored, Book.ingredient.LabelCap), MessageTypeDefOf.RejectInput, true);
                     tickCounter = 0;
