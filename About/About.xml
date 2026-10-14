@@ -3,7 +3,9 @@
 	<name>Vanilla Food Variety Expanded</name>
 	<author>Sarg Bjornson</author>
 	<supportedVersions>
-		<li>1.5</li><li>1.6</li>
+		<li>1.5</li>
+		<li>1.6</li>
+		<li>1.7</li>
 	</supportedVersions>
 	<modIconPath IgnoreIfNoMatchingField="True">UI/VELogo</modIconPath>
 	<packageId>VanillaExpanded.VanillaFoodVarietyExpanded</packageId>
@@ -26,7 +28,6 @@ With this mod you'll find yourself challenged not only to keep your colonists fe
 		</li>
 	</modDependencies>
 	<loadAfter>
-		
 		<li>OskarPotocki.VanillaFactionsExpanded.Core</li>
 	</loadAfter>
 </ModMetaData>
